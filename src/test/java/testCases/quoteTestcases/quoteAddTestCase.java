@@ -1,6 +1,6 @@
-package testCases;
+package testCases.quoteTestcases;
 
-import PageObjects.quoteadd;
+import PageObjects.quote.quoteadd;
 import baseClass.baseclass;
 import org.testng.annotations.Test;
 
@@ -8,15 +8,13 @@ public class quoteAddTestCase extends baseclass {
 
     @Test(priority = 4, dependsOnMethods = "openlinks")
     public void getquoteadd() throws InterruptedException {
-        quoteadd sl = new quoteadd(driver);
-        sl.saleslist();
+        quoteadd qa = new quoteadd(driver);
+        qa.quotelist();
       //  sl.selectStatusByText("Goods");
 
-       sl.setCustomerfield();
-       sl.scrollToItemLineDetails();
-       sl.setLineitem();
-       sl.setScrolllineitemsright();
-       sl.setQuoteview();
-
+       qa.setCustomerfield();
+       qa.scrollToItemLineDetails();
+       qa.setLineitem();
+       qa.setScrolllineitemsright();
     }
 }

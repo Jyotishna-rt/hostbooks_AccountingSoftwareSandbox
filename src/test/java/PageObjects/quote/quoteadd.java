@@ -1,9 +1,8 @@
-package PageObjects;
+package PageObjects.quote;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -46,7 +45,7 @@ public class quoteadd {
     WebElement customerfield;
 
     // Specific customer field locator
-    @FindBy(xpath = "//*[@id=\"pn_id_221_2\"]")
+    @FindBy(xpath = "//*[@id=\"pn_id_221_3\"]")
     WebElement customerInputField;
 
     //scroll
@@ -68,7 +67,7 @@ public class quoteadd {
     @FindBy(xpath = "//*[@id=\"body\"]/div/div/div[3]/button[1]")
     WebElement okbtn;
 
-    //quote click view
+   /* //quote click view
     @FindBy(xpath = "(//*[@id=\"TEXT\"]/div/div)[5]")
     WebElement quoteview;
 
@@ -86,9 +85,9 @@ public class quoteadd {
 
     //ok
     @FindBy(xpath = "//*[@id=\"body\"]/div/div/div[3]/button[1]")
-    WebElement quoteeupdatebtn;
+    WebElement quoteeupdatebtn;*/
 
-    public void saleslist() {
+    public void quotelist() {
         salesmenu.click();
         quotationmenu.click();
         wait.until(ExpectedConditions.elementToBeClickable(quoteadd));
@@ -146,7 +145,7 @@ public class quoteadd {
         approvebtn.click();
         okbtn.click();
     }
-
+/*
     public void setQuoteview(){
         wait.until(ExpectedConditions.elementToBeClickable(quoteview));
         quoteview.click();
@@ -167,7 +166,7 @@ public class quoteadd {
         wait.until(ExpectedConditions.elementToBeClickable(quoteeupdatebtn));
         quoteeupdatebtn.click();
 
-    }
+    }*/
 }
 
 

@@ -12,9 +12,29 @@
                 <include name="openlinks"/>
             </methods>
             </class>
-            <class name="testCases.quoteAddTestCase">
+            <class name="testCases.quoteTestcases.quoteAddTestCase">
                 <methods>
                     <include name="getquoteadd"/>
+                </methods>
+            </class>
+            <class name="testCases.quoteTestcases.quoteEditTestCase">
+                <methods>
+                    <include name="getquoteEdit"/>
+                </methods>
+            </class>
+            <class name="testCases.quoteTestcases.quoteCopyTestCase">
+                <methods>
+                    <include name="getquoteCopy"/>
+                </methods>
+            </class>
+            <class name="testCases.quoteTestcases.quoteAcceptedTestCase">
+                <methods>
+                    <include name="getquoteAccepted"/>
+                </methods>
+            </class>
+            <class name="testCases.quoteTestcases.quoteDeleteTestCase">
+                <methods>
+                    <include name="getquotedelete"/>
                 </methods>
             </class>
         </classes></test></suite>
