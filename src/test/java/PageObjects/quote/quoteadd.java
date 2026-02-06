@@ -25,7 +25,7 @@ public class quoteadd {
 
     //quote
 
-    @FindBy(xpath = "//*[@id=\"menu1\"]/div/div/div[2]/div[1]/ul/li[1]/a")
+    @FindBy(linkText = "Delivery Challans")
     WebElement quotationmenu;
 
     //add quote tab

@@ -12,29 +12,49 @@
                 <include name="openlinks"/>
             </methods>
             </class>
-            <class name="testCases.quoteTestcases.quoteAddTestCase">
+            <class name="testCases.deliveryChallanTestCase.deliveryChallanAddTestCase">
                 <methods>
-                    <include name="getquoteadd"/>
+                    <include name="getdeliveryadd"/>
                 </methods>
             </class>
-            <class name="testCases.quoteTestcases.quoteEditTestCase">
+            <class name="testCases.deliveryChallanTestCase.deliveryChallanEditTestCase">
                 <methods>
-                    <include name="getquoteEdit"/>
+                    <include name="getdeliveryedit"/>
                 </methods>
             </class>
-            <class name="testCases.quoteTestcases.quoteCopyTestCase">
+            <class name="testCases.deliveryChallanTestCase.deliveryChallanCopyTestCase">
                 <methods>
-                    <include name="getquoteCopy"/>
+                    <include name="getdeliverycopy"/>
                 </methods>
             </class>
-            <class name="testCases.quoteTestcases.quoteAcceptedTestCase">
+            <class name="testCases.deliveryChallanTestCase.deliveryChallanDeleteTestCase">
                 <methods>
-                    <include name="getquoteAccepted"/>
+                    <include name="getdeliverydelete"/>
                 </methods>
             </class>
-            <class name="testCases.quoteTestcases.quoteDeleteTestCase">
-                <methods>
-                    <include name="getquotedelete"/>
-                </methods>
-            </class>
+<!--           <class name="testCases.quoteTestcases.quoteAddTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="getquoteadd"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="testCases.quoteTestcases.quoteEditTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="getquoteEdit"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="testCases.quoteTestcases.quoteCopyTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="getquoteCopy"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="testCases.quoteTestcases.quoteAcceptedTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="getquoteAccepted"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="testCases.quoteTestcases.quoteDeleteTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="getquotedelete"/>-->
+<!--                </methods>-->
+<!--            </class>-->
         </classes></test></suite>
