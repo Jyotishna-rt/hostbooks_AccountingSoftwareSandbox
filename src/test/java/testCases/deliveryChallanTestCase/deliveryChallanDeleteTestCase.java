@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class deliveryChallanDeleteTestCase extends baseclass {
 
-    @Test(priority = 7, dependsOnMethods = "getdeliverycopy")
+    @Test(priority = 4, groups = "deliverychallan")
     public void getdeliverydelete() throws InterruptedException {
         deliveryChallanDelete dd = new deliveryChallanDelete(driver);
         dd.setdeliverychaalandelete();

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class quoteAcceptedTestCase extends baseclass {
 
-    @Test(priority = 7, dependsOnMethods = "getquoteCopy")
+    @Test(priority = 4, groups = "quote")
     public void getquoteAccepted() throws InterruptedException {
         quoteAccepted sl = new quoteAccepted(driver);
         sl.setQuoteview();

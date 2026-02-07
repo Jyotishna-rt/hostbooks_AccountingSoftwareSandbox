@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Quote Module Suite">
+    <test name="Quote Test Cases" preserve-order="true">
+        <groups>
+            <run>
+                <include name="login"/>
+                <include name="quote"/>
+            </run>
+        </groups>
+
+        <classes>
+
+            <!-- Common Login -->
+            <class name="testCases.loginTestCase">
+                <methods>
+                    <include name="login"/>
+                    <include name="DashboardList"/>
+                </methods>
+            </class>
+
+            <class name="testCases.zenoopen">
+                <methods>
+                    <include name="openlinks"/>
+                    <include name="openQuote"/>
+                </methods>
+            </class>
+
+            <!-- Quote Module -->
+            <class name="testCases.quoteTestcases.quoteAddTestCase">
+                <methods>
+                    <include name="getquoteadd"/>
+                </methods>
+            </class>
+
+            <class name="testCases.quoteTestcases.quoteEditTestCase">
+                <methods>
+                    <include name="getquoteEdit"/>
+                </methods>
+            </class>
+
+            <class name="testCases.quoteTestcases.quoteCopyTestCase">
+                <methods>
+                    <include name="getquoteCopy"/>
+                </methods>
+            </class>
+
+            <class name="testCases.quoteTestcases.quoteAcceptedTestCase">
+                <methods>
+                    <include name="getquoteAccepted"/>
+                </methods>
+            </class>
+
+            <class name="testCases.quoteTestcases.quoteDeleteTestCase">
+                <methods>
+                    <include name="getquotedelete"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

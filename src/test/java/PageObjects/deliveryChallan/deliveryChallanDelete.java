@@ -39,6 +39,8 @@ public class deliveryChallanDelete {
     WebElement okbtn;
 
 
+
+
     public void setdeliverychaalandelete(){
 
         deliverychallanlist.click();
@@ -50,7 +52,10 @@ public class deliveryChallanDelete {
         wait.until(ExpectedConditions.elementToBeClickable(deletebtn));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", deletebtn);
 
+        //popup for delete yes or no
         wait.until(ExpectedConditions.elementToBeClickable(okbtn));
+        okbtn.click();
+        //ok btn
         okbtn.click();
     }
     }

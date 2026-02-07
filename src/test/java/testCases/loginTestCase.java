@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import static baseClass.baseclass.driver;
 
 public class loginTestCase extends baseclass {
-    @Test(priority = 1)
+    @Test(priority = 1, groups = "login")
     public void login() {
 
         accountLogin aclogin = PageFactory.initElements(driver, accountLogin.class);
@@ -17,7 +17,7 @@ public class loginTestCase extends baseclass {
     }
 
 
-    @Test(priority = 2)
+    @Test(priority = 2, groups = "login")
     public void DashboardList() {
         dashboard dasbrd = PageFactory.initElements(driver, dashboard.class);
         dasbrd.setdash();

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class deliveryChallanCopyTestCase extends baseclass {
 
-    @Test(priority = 6, dependsOnMethods = "getdeliveryedit")
+    @Test(priority = 3, groups = "deliverychallan")
     public void getdeliverycopy() throws InterruptedException {
         deliveryChallanCopy dc = new deliveryChallanCopy(driver);
         dc.setDeliverychallancopy();

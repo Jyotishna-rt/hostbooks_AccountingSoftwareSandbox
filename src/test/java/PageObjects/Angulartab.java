@@ -96,6 +96,14 @@ public class Angulartab {
 //
 //            System.out.println(">>> Successfully navigated to Dashboard: " + driver.getCurrentUrl());
     }
+
+    public void openQuote() {
+        driver.get("https://cloud360erp.hostbooks.in/accounts-books/txn?txnType=QU&withIn=any&pageSize=10&status=ALL-QU");
+    }
+
+    public void openDeliveryChallan() {
+        driver.get("https://cloud360erp.hostbooks.in/accounts-books/txn?txnType=DC");
+    }
 }
 
 

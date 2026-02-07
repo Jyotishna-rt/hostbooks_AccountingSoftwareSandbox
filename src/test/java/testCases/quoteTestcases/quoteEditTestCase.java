@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class quoteEditTestCase extends baseclass {
 
 
-    @Test(priority = 5, dependsOnMethods = "getquoteadd")
+    @Test(priority = 2, groups = "quote")
     public void getquoteEdit() throws InterruptedException {
         quoteEdit qe = new quoteEdit(driver);
 

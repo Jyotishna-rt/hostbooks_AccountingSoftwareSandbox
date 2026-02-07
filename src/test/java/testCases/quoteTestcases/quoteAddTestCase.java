@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class quoteAddTestCase extends baseclass {
 
-    @Test(priority = 4, dependsOnMethods = "openlinks")
+    @Test(priority = 1, groups = "quote")
     public void getquoteadd() throws InterruptedException {
         quoteadd qa = new quoteadd(driver);
         qa.quotelist();

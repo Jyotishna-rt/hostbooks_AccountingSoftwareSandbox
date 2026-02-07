@@ -135,7 +135,7 @@ public class deliveryChallanAdd {
 
 
     public void scrollToItemLineDetails() {
-        wait.until(ExpectedConditions.visibilityOf(customercode));
+        wait.until(ExpectedConditions.visibilityOf(customercode ));
         wait.until(ExpectedConditions.visibilityOf(scrolllineitems));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 

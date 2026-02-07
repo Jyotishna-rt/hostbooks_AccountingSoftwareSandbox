@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class quoteDeleteTestCase extends baseclass {
 
 
-    @Test(priority = 8, dependsOnMethods = "getquoteAccepted")
+    @Test(priority = 5, groups = "quote")
     public void getquotedelete() {
         quoteDelete qd = new quoteDelete(driver);
 

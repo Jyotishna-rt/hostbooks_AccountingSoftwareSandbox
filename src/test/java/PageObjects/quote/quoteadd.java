@@ -1,4 +1,5 @@
 package PageObjects.quote;
+import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,21 +12,24 @@ import java.time.Duration;
 public class quoteadd {
     WebDriver driver;
     WebDriverWait wait;
-
-
+    WebDriverWait extendedWait;
+    JavascriptExecutor js;
 
     public quoteadd(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-    }
+        js  = (JavascriptExecutor) driver;
+        extendedWait = new WebDriverWait(driver, Duration.ofSeconds(40));
 
+            }
+
+      //sales modules
     @FindBy(linkText = "Sales")
     WebElement salesmenu;
 
     //quote
-
-    @FindBy(linkText = "Delivery Challans")
+    @FindBy(linkText = "Quotation")
     WebElement quotationmenu;
 
     //add quote tab
@@ -33,11 +37,17 @@ public class quoteadd {
     WebElement quoteadd;
 
 
+    @FindBy(xpath = "(//input[@id=\"float-calendar\"])[1]")
+    WebElement quotedate;
+
+    @FindBy(xpath = "//*[@id=\"textField\"]")
+    WebElement quoteno;
+
     //expiry date
-    @FindBy(xpath = "//*[@id=\"pn_id_150_content\"]/app-invoice-fields/div/div[1]/div/div[2]/div[7]/hb-date-picker/div/span/p-calendar/span/button")
+    @FindBy(xpath = "(//input[@id='float-calendar'])[2]")
     WebElement expirydate;
 
-    @FindBy(xpath = "//*[@id=\"pn_id_220_panel\"]/div[2]/button[1]/span")
+    @FindBy(xpath = "//span[normalize-space()='Today']")
     WebElement today;
 
     //customer field
@@ -64,42 +74,44 @@ public class quoteadd {
     @FindBy(xpath = "//*[@id=\"light\"]/section/div/div/div/div/app-add-edit-quote/div/div[2]/hb-button[1]/button/span")
     WebElement approvebtn;
 
+
     @FindBy(xpath = "//*[@id=\"body\"]/div/div/div[3]/button[1]")
     WebElement okbtn;
 
-   /* //quote click view
-    @FindBy(xpath = "(//*[@id=\"TEXT\"]/div/div)[5]")
-    WebElement quoteview;
-
-    //quoteaccept
-    @FindBy(xpath = "//*[@id=\"light\"]/section/div/div/div/div/app-view-quote/div/hb-header-strip/div[1]/div[1]/div[3]/hb-split-button[3]/div/p-splitbutton/div/button[2]")
-    WebElement quickoptionbtn;
-
-//popup mark as accepted
-    @FindBy(xpath = "//a[.//span[normalize-space()='Mark as Accepted']]")
-    WebElement markacceptedbtn;
-
-    //popup for changes
-    @FindBy(xpath = "//*[@id=\"body\"]/div/div/div[3]/button[1]")
-    WebElement quotepopupbtn;
-
-    //ok
-    @FindBy(xpath = "//*[@id=\"body\"]/div/div/div[3]/button[1]")
-    WebElement quoteeupdatebtn;*/
 
     public void quotelist() {
         salesmenu.click();
         quotationmenu.click();
+        extendedWait = new WebDriverWait(driver, Duration.ofSeconds(40));
         wait.until(ExpectedConditions.elementToBeClickable(quoteadd));
         quoteadd.click();
+
+        // wait till form fully loaded
+        wait.until(ExpectedConditions.visibilityOf(quotedate));
+
+        //wait till quote no loaded
+        extendedWait = new WebDriverWait(driver, Duration.ofSeconds(40));
+        wait.until(ExpectedConditions.visibilityOf(quoteno));
+
+        // click expiry date
+        // NOW wait calendar open
         expirydate.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[contains(@class,'p-datepicker')]")
+        ));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", expirydate);
+        wait.until(ExpectedConditions.elementToBeClickable(today));
         today.click();
     }
 
     public void setCustomerfield() {
+        extendedWait = new WebDriverWait(driver, Duration.ofSeconds(40));
         // Click customer dropdown
         wait.until(ExpectedConditions.elementToBeClickable(customerfield));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", customerfield);
+
         customerfield.click();
+        wait.until(ExpectedConditions.elementToBeClickable(customerInputField));
         customerInputField.click();
 
 
@@ -143,30 +155,9 @@ public class quoteadd {
         }
 
         approvebtn.click();
+        wait.until(ExpectedConditions.elementToBeClickable(okbtn));
         okbtn.click();
     }
-/*
-    public void setQuoteview(){
-        wait.until(ExpectedConditions.elementToBeClickable(quoteview));
-        quoteview.click();
-
-//            // Wait for and click the options dropdown
-            wait.until(ExpectedConditions.elementToBeClickable(quickoptionbtn));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", quickoptionbtn);
-
-        //markaccepted click
-        wait.until(ExpectedConditions.visibilityOf(markacceptedbtn));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", markacceptedbtn);
-
-        //popup click
-        wait.until(ExpectedConditions.visibilityOf(quotepopupbtn));
-        quotepopupbtn.click();
-
-        //update click
-        wait.until(ExpectedConditions.elementToBeClickable(quoteeupdatebtn));
-        quoteeupdatebtn.click();
-
-    }*/
 }
 
 
