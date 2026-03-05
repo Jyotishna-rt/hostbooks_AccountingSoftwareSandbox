@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Sales invoice Module Suite">
+    <test name="Sales invoice Test Cases" preserve-order="true">
+        <groups>
+            <run>
+                <include name="login"/>
+                <include name="salesinvoice"/>
+            </run>
+        </groups>
+
+        <classes>
+
+            <!-- Common Login -->
+            <class name="testCases.loginTestCase">
+                <methods>
+                    <include name="login"/>
+                    <include name="DashboardList"/>
+                </methods>
+            </class>
+
+            <class name="testCases.zenoopen">
+                <methods>
+                    <include name="openlinks"/>
+                    <include name="opensalesinvoice"/>
+                </methods>
+            </class>
+
+<!--            &lt;!&ndash; sales invoice  Module &ndash;&gt;-->
+<!--            <class name="testCases.salesInvoiceTestCase.salesInvoiceAddTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="getsalesinvoiceadd"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="testCases.salesInvoiceTestCase.salesInvoiceEditTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="getsalesinvoiceedit"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+
+<!--            <class name="testCases.salesInvoiceTestCase.salesInvoiceCopyTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="getsalesinvoicecopy"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+
+            <class name="testCases.salesInvoiceTestCase.salesInvoiceVoidTestCase">
+                <methods>
+                    <include name="getsalesinvoicevoid"/>
+                </methods>
+            </class>
+
+
+            <class name="testCases.salesInvoiceTestCase.salesInvoiceDeleteTestCase">
+                <methods>
+                    <include name="getsalesinvoicedelete"/>
+                </methods>
+            </class>
+
+
+        </classes>
+    </test>
+</suite>
+

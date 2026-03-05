@@ -30,6 +30,12 @@ public class zenoopen extends baseclass {
         Angulartab tab = new Angulartab(driver);
         tab.openDeliveryChallan();
     }
+
+    @Test(groups = "salesinvoice")
+    public void opensalesinvoice(){
+        Angulartab tab = new Angulartab(driver);
+        tab.opensalesinvoice();
+    }
 }
 
 

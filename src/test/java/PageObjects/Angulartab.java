@@ -84,7 +84,6 @@ public class Angulartab {
         driver.switchTo().window(dashboardTab);
 
 
-
 //            JavascriptExecutor js = (JavascriptExecutor) driver;
 //            js.executeScript("window.location.href='https://cloud360erp.hostbooks.in/dashboard'");
 ////            // 2️⃣ Navigate to /dashboard in the same tab
@@ -104,8 +103,11 @@ public class Angulartab {
     public void openDeliveryChallan() {
         driver.get("https://cloud360erp.hostbooks.in/accounts-books/txn?txnType=DC");
     }
-}
 
+    public void opensalesinvoice() {
+        driver.get("https://cloud360erp.hostbooks.in/accounts-books/txn?txnType=INV&withIn=any&pageSize=10&status=ALL-IN");
+    }
+}
 
 
 

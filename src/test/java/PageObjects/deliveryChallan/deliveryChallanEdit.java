@@ -50,7 +50,6 @@ public class deliveryChallanEdit {
     WebElement lineitemscroll;
 
 
-
     //new line item
     @FindBy(xpath = "//span[normalize-space()='Line']")
     WebElement Linebtn;
@@ -109,6 +108,7 @@ public class deliveryChallanEdit {
 
         wait.until(ExpectedConditions.visibilityOf(lineitemscroll));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", lineitemscroll);
+
 
 
     }

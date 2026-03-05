@@ -24,6 +24,11 @@ public class baseclass {
         browserSetup.teardown(driver);
         //   driver.quit();
     }
+
+    // Helper method for logging
+    protected void log(String message) {
+        System.out.println("[" + this.getClass().getSimpleName() + "] " + message);
+    }
 }
 
 
